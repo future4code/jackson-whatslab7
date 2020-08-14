@@ -1,9 +1,8 @@
 import React from 'react';
 import logo from './logo.svg';
 import styled from 'styled-components'
+import BalaoMensagem from './assets/BalaoMensagem'
 
-
-import './App.css';
 
 const ContainerGeral = styled.div`
 display: flex;
@@ -12,6 +11,7 @@ justify-content: center;
 `
 
 const ContainerWhats = styled.div`
+background-color: #E5DDD6;
 height: 100vh;
 width: 35vw;
 border: 1px solid black;
@@ -22,7 +22,6 @@ justify-content: flex-end;
 
 const ContainerInput = styled.div`
 display: flex;
-
 `
 
 const InputStyle = styled.input`
@@ -81,16 +80,18 @@ mandarMensagem = () => {
   const listaMensagem = this.state.mensagem.map((msg) => {
 
     return (
-      <div>
-        <p>{msg.nome} {msg.conteudo}</p>
-      </div>
+      <BalaoMensagem 
+      nome={msg.nome}
+      conteudo={msg.conteudo}
+      />
     )
   })
 
 
   return (
     <ContainerGeral>
-      <ContainerWhats>{listaMensagem}
+      <ContainerWhats>
+        {listaMensagem}
         <ContainerInput>
         <InputStyle 
         value={this.state.valorInputNome}
