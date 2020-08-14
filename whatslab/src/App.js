@@ -67,12 +67,6 @@ const Credits = styled.p `
   font-size: 0.8em;
   margin-top: 1.2em;
 `
-const ContainerBalao = styled.div `
-    background-color: #DDF7C8;
-    border-radius: 4px;
-    height: 3em;
-    width: 10em;
-`
 
 
 class App extends React.Component {
