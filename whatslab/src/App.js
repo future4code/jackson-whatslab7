@@ -47,10 +47,6 @@ width: ${props => {
 }};
 `
 
-const DeleteButton = styled.button`
-width: 20px;
-
-`
 
 const SendButton = styled.img `
   height: 1.5em;
