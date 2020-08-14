@@ -68,6 +68,7 @@ const Credits = styled.p `
   margin-top: 1.2em;
 `
 
+
 class App extends React.Component {
 
 state = {
@@ -122,17 +123,24 @@ mandarMensagem = () => {
 
 
 
+
+
   render() {
 
   const listaMensagem = this.state.mensagem.map((msg) => {
 
     return (
+
+      
+      
       <BalaoMensagem 
       nome={msg.nome}
-      conteudo={msg.conteudo}
-      />
+      conteudo={msg.conteudo}> 
+      </BalaoMensagem>
     )
   })
+
+ 
 
 
   return (
@@ -149,6 +157,7 @@ mandarMensagem = () => {
         input={"mensagem"}
         value={this.state.valorInputConteudo}
         onChange={this.onChangeMensagem}
+        onKeyDown={this.apertouEnter}
         placeholder="Mensagem"
         />
         <SendButton src={SendIcon} onClick={this.mandarMensagem}/>
