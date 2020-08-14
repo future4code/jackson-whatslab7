@@ -1,5 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
+import AppJs from './../App'
+
 
 const ContainerBalao = styled.div`
 
@@ -34,8 +36,21 @@ const ContainerBalao = styled.div`
 
 class BalaoMensagem extends React.Component {
 
+    // deletarMensagem = (mensagemDeletada) => {
+    //     const novoArrayMensagemDel = this.props.mensagem.filter((mensagem) => {
+    //       if(mensagem.conteudo === mensagemDeletada) {
+    //         return false
+    //       } else {
+    //         return true
+    //       }
+    //     })
+      
+    //     this.setState({mensagem: novoArrayMensagemDel})
+    //   }
+      
+
     render() {
-        if (this.props.nome === "eu" || this.props.nome === "Eu") {
+        if (this.props.nome === "eu" || this.props.nome === "Eu" || this.props.nome === "EU") {
             return (
                 <ContainerBalao tipo={"eu"}>
                     <p>{this.props.conteudo}</p>

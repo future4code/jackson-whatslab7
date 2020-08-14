@@ -47,6 +47,11 @@ width: ${props => {
 }};
 `
 
+const DeleteButton = styled.button`
+width: 20px;
+
+`
+
 const SendButton = styled.img `
   height: 1.5em;
   margin-left: 1em;
@@ -109,6 +114,7 @@ mandarMensagem = () => {
       conteudo: this.state.valorInputConteudo
     }
 
+
     const novoArrayMsg = [...this.state.mensagem, novaMensagem]
 
     this.setState({
@@ -119,7 +125,20 @@ mandarMensagem = () => {
   } else {
     alert("Escreva um nome de usuário e uma mensagem!")
   }
+
 }
+
+// deletarMensagem = (mensagemDeletada) => {
+//   const novoArrayMensagemDel = this.state.mensagem.filter((mensagem) => {
+//     if(mensagem.conteudo === mensagemDeletada) {
+//       return false
+//     } else {
+//       return true
+//     }
+//   })
+
+//   this.setState({mensagem: novoArrayMensagemDel})
+// }
 
 
 
@@ -130,8 +149,6 @@ mandarMensagem = () => {
   const listaMensagem = this.state.mensagem.map((msg) => {
 
     return (
-
-      
       
       <BalaoMensagem 
       nome={msg.nome}
