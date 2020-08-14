@@ -1,23 +1,54 @@
 import React from 'react'
 import styled from 'styled-components'
 
-const ContainerBalao = styled.div `
-    background-color: #DDF7C8;
-    border-radius: 4px;
-    height: 3em;
-    width: 10em;
-`
+const ContainerBalao = styled.div`
 
+    border-radius: 4px;
+    margin-bottom: 1em;
+    margin-left: ${props => {
+        if (props.tipo === "eu") {
+            return "13em"
+        } else if (props.tipo === "outro") {
+            return "1.3em"
+        }
+    }};
+    margin-right: ${props => {
+        if (props.tipo === "eu") {
+            return "1.3em"
+        } else if (props.tipo === "outro") {
+            return "13em"
+        }
+    }
+
+    };
+    padding-left: 1em;
+    background-color: ${props => {
+        if (props.tipo === "eu") {
+            return "#DDF7C8"
+        } else if (props.tipo === "outro") {
+            return "#ffffff"
+        }
+}};
+`
+    
 
 class BalaoMensagem extends React.Component {
 
     render() {
-        return (
-            <ContainerBalao>
-                <p><strong>{this.props.nome}</strong></p>
-                <p>{this.props.conteudo}</p>
-            </ContainerBalao>
-        )
+        if (this.props.nome === "eu" || this.props.nome === "Eu") {
+            return (
+                <ContainerBalao tipo={"eu"}>
+                    <p>{this.props.conteudo}</p>
+                </ContainerBalao>
+            )
+        } else {
+            return (
+                <ContainerBalao tipo={"outro"}>
+                    <p><strong>{this.props.nome}</strong></p>
+                    <p>{this.props.conteudo}</p>
+                </ContainerBalao>
+            )
+        }
     }
 }
 
