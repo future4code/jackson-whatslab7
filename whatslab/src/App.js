@@ -28,6 +28,13 @@ const InputStyle = styled.input`
 width: 15vw;
 display: flex;
 `
+const ContainerBalao = styled.div `
+    background-color: #DDF7C8;
+    border-radius: 4px;
+    height: 3em;
+    width: 10em;
+`
+
 
 class App extends React.Component {
 
@@ -75,17 +82,24 @@ mandarMensagem = () => {
 
 
 
+
+
   render() {
 
   const listaMensagem = this.state.mensagem.map((msg) => {
 
     return (
+
+      
+      
       <BalaoMensagem 
       nome={msg.nome}
-      conteudo={msg.conteudo}
-      />
+      conteudo={msg.conteudo}> 
+      </BalaoMensagem>
     )
   })
+
+ 
 
 
   return (
